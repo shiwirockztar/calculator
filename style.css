@@ -8,10 +8,10 @@
 }
 
 *{box-sizing: border-box;margin: 0;padding: o;}
+html{font-size: 62.5%;}
 h1{font-family: 'Rubik Glitch', cursive;font-size: 54px;  	color: rgba(0, 0, 0, .01);-webkit-text-stroke: .5px #04fbff;z-index: 99;}/*#00f54f*/
 h2{font-family: 'Rubik Glitch', cursive;font-size: 54px;position: absolute;top: 0;left: 6px;z-index: -1000;color: rgba(0, 0, 0, .01);-webkit-text-stroke: .5px #fa04ed}/*#fb060b*/
 h5{font-family: 'Rubik Glitch', cursive;font-size: 54px;position: absolute;top: 0;left: 3px;color: rgba(0, 0, 0, .01);-webkit-text-stroke: .5px white}
-html{font-size: 62.5%;}
 body{background:url(a.jpg);background: darkviolet;background: #d4e5f5; 	background-size: 100% 100%;background-attachment: fixed; }
 div{ display: grid; align-items: center;justify-content: center;}
 h3{font-size: 18px;}
@@ -21,45 +21,48 @@ h3{font-size: 18px;}
 	background:#76808c;padding: 1px;border-radius: 9px;overflow: hidden;
 }
 /*----------------------- items----------------------*/
+.calculadora .display {grid-area: x; align-items: end;font-size: 18px;background: rgb(80 92 104);justify-content: end;padding-right: 42px;} 
+.calculadora .display b{color: #898f9b;font-weight: 50%;}
+.calculadora .display h3{font-family: 'Libre Baskerville', serif;font-family: 'Prata', serif;text-align: right;font-size: 40px;}	
+
+
 .calculadora  > div {text-align: right;font-size: 18px;color: white;}
-.calculadora  > div:hover{background: Aqua;background: rgba(0, 0, 255, 0.3);}
+.calculadora  > div:hover:not(#equal) {background: rgba(0, 0, 255, 0.3);}
+/*.calculadora:hover:{background: rgba(0, 0, 255, 0.3);}*/
 
 /*-------------------- end items -------------------*/
 
 /*---------------------  areas---------------------  */
 
-.calculadora .op1{grid-area: ce ;background: var(--Mgray);}.calculadora .op2 {grid-area:clear;background: var(--Mgray);}
-.calculadora .op3{grid-area: del;background: var(--Mgray);}.calculadora .op4{grid-area: div;background: var(--Mgray);}
-.calculadora .item1 { grid-area: a; background: var(--Wgray);}.calculadora .item2 { grid-area: b; background: var(--Wgray);}.calculadora .item3 { grid-area: c; background: var(--Wgray);}
-.calculadora .item4 { grid-area: d; background: var(--Wgray);}.calculadora .item5 { grid-area: e; background: var(--Wgray);}.calculadora .item6 { grid-area: f; background: var(--Wgray);}
-.calculadora .item7 { grid-area: g; background: var(--Wgray);}.calculadora .item8 { grid-area: h; background: var(--Wgray);}.calculadora .item9 { grid-area: i; background: var(--Wgray);}
-.calculadora .item11{ grid-area: p; background: var(--Dgray);}.calculadora .item10{ grid-area: j; background: var(--Wgray);}
+#ce     {grid-area: ce ;background: var(--Mgray);}      #Clear {grid-area:clear;background: var(--Mgray);}    #Del    {grid-area: del;background: var(--Mgray);}      #Divide{grid-area: division;background: var(--Mgray);}
 
+#multiply {grid-area:  mul;background: var(--Mgray);}
+#minus{grid-area: lef;background: var(--Mgray);}
+#plus{grid-area: plus;background: var(--Mgray);}
 
-.calculadora .display {grid-area: x; align-items: end;font-size: 18px;background: rgb(80 92 104);justify-content: end;padding-right: 42px;} 
-.calculadora .display b{color: #898f9b;font-weight: 50%;}
-.calculadora .display h3{font-family: 'Libre Baskerville', serif;font-family: 'Prata', serif;text-align: right;font-size: 40px;}	
-.calculadora .op5 {grid-area:  inv;background: var(--Dgray);}.calculadora .op6{grid-area: rad;background: var(--Dgray);}.calculadora .op7{grid-area: sin;background: var(--Dgray);}
-.calculadora .op8 {grid-area:  mul;background: var(--Mgray);}
-.calculadora .op9{grid-area: cos;background: var(--Dgray);}.calculadora .op10{grid-area: tan;background: var(--Dgray);}.calculadora .op11{grid-area: porc;background: var(--Dgray);}
-.calculadora .op12{grid-area: lef;background: var(--Mgray);}
-.calculadora .op13{grid-area: ln;background: var(--Dgray);}.calculadora .op14{grid-area: log;background: var(--Dgray);}.calculadora .op15{grid-area: im;background: var(--Dgray);}
-.calculadora .op16{grid-area: plus;background: var(--Mgray);}
-.calculadora .op17{grid-area: exp;background: var(--Dgray);}.calculadora .op18{grid-area: pi;background: var(--Dgray);}.calculadora .op19{grid-area: euler;background: var(--Dgray);}
-.calculadora .op0{grid-area: ig;background-image: linear-gradient(to right, #ec4072 , #fba82f);}
-.calculadora .op20{grid-area: opB;background: var(--Dgray);}.calculadora .op21{grid-area: clB;background: var(--Dgray);}.calculadora .op22{grid-area: sqrt;background: var(--Dgray);}
+#Uno    {grid-area: uno; background: var(--Wgray);}     #Dos {grid-area: dos; background: var(--Wgray);}      #Tres {grid-area: tres; background: var(--Wgray);}
+#Cuatro {grid-area: cuatro; background: var(--Wgray);}  #Cinco {grid-area: cinco; background: var(--Wgray);}  #Seis {grid-area: seis; background: var(--Wgray);}
+#Siete  {grid-area: siete; background: var(--Wgray);}   #Ocho {grid-area: ocho; background: var(--Wgray);}    #Nueve {grid-area: nueve; background: var(--Wgray);}
+#punto  {grid-area: punto; background: var(--Dgray);}   #Cero {grid-area: cero; background: var(--Wgray);}
 
+#inv {grid-area:  inv;background: var(--Dgray);}  #rad{grid-area: rad;background: var(--Dgray);}   #sin{grid-area: sin;background: var(--Dgray);}
+#cos{grid-area: cos;background: var(--Dgray);}    #tan {grid-area: tan;background: var(--Dgray);}  #porc{grid-area: porc;background: var(--Dgray);}
+#ln {grid-area: ln;background: var(--Dgray);}     #log{grid-area: log;background: var(--Dgray);}   #im{grid-area: im;background: var(--Dgray);}
+#exp{grid-area: exp;background: var(--Dgray);}    #pi{grid-area: pi;background: var(--Dgray);}     #euler{grid-area: euler;background: var(--Dgray);}
+#opB{grid-area: opB;background: var(--Dgray);}    #clB{grid-area: clB;background: var(--Dgray);}   #sqrt{grid-area: sqrt;background: var(--Dgray);}
+
+#equal{grid-area: ig;background-image: linear-gradient(to right, #ec4072 , #fba82f);}
 
 .calculadora {
 	display: grid;
 	grid-template-columns: repeat(11,1fr);
 	gap: 1px;
-  	grid-template-areas:
-    'x x x x x x x x x x x'
-    'x x x x x x x x x x x'
-    'ce ce clear clear del del div div inv rad sin'
-    'a a b b c c mul mul cos tan porc' 
-    'd d e e f f lef lef ln log im'
-    'g g h h i i plus plus exp pi euler'
-    'p p j j ig ig ig ig opB clB sqrt';}
+	grid-template-areas:
+  'x x x x x x x x x x x'
+  'x x x x x x x x x x x'
+  'ce ce clear clear del del division division inv rad sin'
+  'uno uno dos dos tres tres mul mul cos tan porc' 
+  'cuatro cuatro cinco cinco seis seis lef lef ln log im'
+  'siete siete ocho ocho nueve nueve plus plus exp pi euler'
+  'punto punto cero cero ig ig ig ig opB clB sqrt';}
 /*---------------------  end areas---------------------  */
