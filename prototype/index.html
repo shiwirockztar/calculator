@@ -2,81 +2,78 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'montserrat', sans-serif;font-family: 'Rubik Glitch', cursive;
-  background: #d4e5f5;
-}
 
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.text {
-  color: #fff;
-  /*text-transform: uppercase;*/
-  font-size: 52px;
-  text-align: center;
-  letter-spacing: 14px;
-}
-
-.text::before,
-.text::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.text::before {
-  color: #ff00c1;
-  animation: glitch-effect 3s infinite;
-}
-
-.text::after {
-  color: #3498db;
-  animation: glitch-effect 2s infinite;
-}
-
-@keyframes glitch-effect {
-  0% {
-    left: -2px;
-    top: -2px;
-  }
-  25% {
-    left: 2px;
-    top: 0px;
-  }
-  50% {
-    left: -1px;
-    top: 2px;
-  }
-  75% {
-    left: 1px;
-    top: -1px;
-  }
-  100% {
-    left: 0px;
-    top: -2px;
-  }
-}
-</style>
 
 </head>
 <body>
 
 
-<div class="text middle" data-text="Leonardo">
-  Leonardo
-</div>
+<script>
+  // let text="012+456+890-321-213+432-100";  console.log(text);
+  let text="70+180-90+60+30+20-50-45";  console.log(text);//nota regla empezar primero con un numero la tecla de menos verifica esto antes de introduzirse 
+let deci="130.18";let Ndeci=deci.replace(",", ".");let deciN=parseFloat(Ndeci);console.log(deciN+10, " y ",Ndeci);let numdec=130.77+69.33;console.log(numdec);
+  let zext="12345";  // let position =zext.search("-");
+  let totalM=0;
+  let totalP=0;
+  let sum=0;
+
+  let position =zext.indexOf("-");
+
+ // ---------- arreglo -----------------------------------------------------------------------------------------
+  res=text.split("+"); console.log(res);
+  
+
+  const operador = (item)=>{
+    if (item.search("-")>0) { 
+      let element=item.split("-");
+      totalP+=parseFloat(element[0]);
+      console.log(" hay un negativo en ",item);}
+  }
+
+  res.forEach(sumatoria);
+
+    function sumatoria(item){
+    if (item.search("-")<0) { 
+       totalP+=parseFloat(item);
+    }
+    else  {
+       let element=item.split("-");
+       totalP+=parseFloat(element[0]);
+       console.log("este es el element ",element);
+       let tot=element.forEach(total);console.log("este es el tot ",tot);
+       totalM+=(sum)-(parseFloat(element[0]));console.log("este es el totalM ",totalM," y la suma va por ",sum);
+       sum=0;
+    }
+
+  }
+
+
+  function total(item){
+    sum+=parseFloat(item);
+    console.log("la suma va en ",sum);
+    return sum;
+  }
+
+
+
+
+  // res.forEach(myFunction);
+  console.log(res," aqui la posicion de los - ",position);
+  console.log(totalP," de numero + y de numero - ",totalM);
+  console.log("resultado es ",totalP-totalM);//******************************************************
+
+
+
+  function separator(text,opA,opB) {
+    res=text.split(opA);
+
+  }
+
+  function coontador(){
+    if (true) {}
+  }
+
+</script>
 
 </body>
 </html>

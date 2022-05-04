@@ -34,16 +34,16 @@ h3{font-size: 18px;}
 
 /*---------------------  areas---------------------  */
 
-#ce     {grid-area: ce ;background: var(--Mgray);}      #Clear {grid-area:clear;background: var(--Mgray);}    #Del    {grid-area: del;background: var(--Mgray);}      #Divide{grid-area: division;background: var(--Mgray);}
+#ce     {grid-area: ce ;background: var(--Mgray);}      #clear {grid-area:clear;background: var(--Mgray);}    #del    {grid-area: del;background: var(--Mgray);}      #Divide{grid-area: division;background: var(--Mgray);}
 
 #multiply {grid-area:  mul;background: var(--Mgray);}
 #minus{grid-area: lef;background: var(--Mgray);}
 #plus{grid-area: plus;background: var(--Mgray);}
 
-#Uno    {grid-area: uno; background: var(--Wgray);}     #Dos {grid-area: dos; background: var(--Wgray);}      #Tres {grid-area: tres; background: var(--Wgray);}
-#Cuatro {grid-area: cuatro; background: var(--Wgray);}  #Cinco {grid-area: cinco; background: var(--Wgray);}  #Seis {grid-area: seis; background: var(--Wgray);}
-#Siete  {grid-area: siete; background: var(--Wgray);}   #Ocho {grid-area: ocho; background: var(--Wgray);}    #Nueve {grid-area: nueve; background: var(--Wgray);}
-#punto  {grid-area: punto; background: var(--Dgray);}   #Cero {grid-area: cero; background: var(--Wgray);}
+#uno    {grid-area: uno; background: var(--Wgray);}     #dos {grid-area: dos; background: var(--Wgray);}      #tres {grid-area: tres; background: var(--Wgray);}
+#cuatro {grid-area: cuatro; background: var(--Wgray);}  #cinco {grid-area: cinco; background: var(--Wgray);}  #seis {grid-area: seis; background: var(--Wgray);}
+#siete  {grid-area: siete; background: var(--Wgray);}   #ocho {grid-area: ocho; background: var(--Wgray);}    #nueve {grid-area: nueve; background: var(--Wgray);}
+#punto  {grid-area: punto; background: var(--Dgray);}   #cero {grid-area: cero; background: var(--Wgray);}
 
 #inv {grid-area:  inv;background: var(--Dgray);}  #rad{grid-area: rad;background: var(--Dgray);}   #sin{grid-area: sin;background: var(--Dgray);}
 #cos{grid-area: cos;background: var(--Dgray);}    #tan {grid-area: tan;background: var(--Dgray);}  #porc{grid-area: porc;background: var(--Dgray);}
