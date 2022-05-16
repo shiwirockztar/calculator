@@ -3,76 +3,27 @@
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 
+  <script src='decimal.js'></script>
 
 </head>
 <body>
 
 
 <script>
-  // let text="012+456+890-321-213+432-100";  console.log(text);
-  let text="70+180-90+60+30+20-50-45";  console.log(text);//nota regla empezar primero con un numero la tecla de menos verifica esto antes de introduzirse 
-let deci="130.18";let Ndeci=deci.replace(",", ".");let deciN=parseFloat(Ndeci);console.log(deciN+10, " y ",Ndeci);let numdec=130.77+69.33;console.log(numdec);
-  let zext="12345";  // let position =zext.search("-");
-  let totalM=0;
-  let totalP=0;
-  let sum=0;
+  let text='263.301+336.398+100.000-100-90-2*3-200-0+300';
+  let txt = text.split("+"); 
+  document.write(txt);
 
-  let position =zext.indexOf("-");
+let n= new Decimal(123.78);
+let b=n.plus(0).toNumber ();
+console.log(b);
+// n = Math.abs(n); // Change to positive var decimal = n - Math.floor(n)
 
- // ---------- arreglo -----------------------------------------------------------------------------------------
-  res=text.split("+"); console.log(res);
-  
-
-  const operador = (item)=>{
-    if (item.search("-")>0) { 
-      let element=item.split("-");
-      totalP+=parseFloat(element[0]);
-      console.log(" hay un negativo en ",item);}
-  }
-
-  res.forEach(sumatoria);
-
-    function sumatoria(item){
-    if (item.search("-")<0) { 
-       totalP+=parseFloat(item);
-    }
-    else  {
-       let element=item.split("-");
-       totalP+=parseFloat(element[0]);
-       console.log("este es el element ",element);
-       let tot=element.forEach(total);console.log("este es el tot ",tot);
-       totalM+=(sum)-(parseFloat(element[0]));console.log("este es el totalM ",totalM," y la suma va por ",sum);
-       sum=0;
-    }
-
-  }
-
-
-  function total(item){
-    sum+=parseFloat(item);
-    console.log("la suma va en ",sum);
-    return sum;
-  }
+// var decimal = n - Math.floor(n)
 
 
 
-
-  // res.forEach(myFunction);
-  console.log(res," aqui la posicion de los - ",position);
-  console.log(totalP," de numero + y de numero - ",totalM);
-  console.log("resultado es ",totalP-totalM);//******************************************************
-
-
-
-  function separator(text,opA,opB) {
-    res=text.split(opA);
-
-  }
-
-  function coontador(){
-    if (true) {}
-  }
-
+  console.log(n);
 </script>
 
 </body>

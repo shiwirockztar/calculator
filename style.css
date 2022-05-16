@@ -7,6 +7,7 @@
   --Wgray: rgb(91 106 125);
 }
 
+
 *{box-sizing: border-box;margin: 0;padding: o;}
 html{font-size: 62.5%;}
 h1{font-family: 'Rubik Glitch', cursive;font-size: 54px;  	color: rgba(0, 0, 0, .01);-webkit-text-stroke: .5px #04fbff;z-index: 99;}/*#00f54f*/
@@ -15,6 +16,8 @@ h5{font-family: 'Rubik Glitch', cursive;font-size: 54px;position: absolute;top: 
 body{background:url(a.jpg);background: darkviolet;background: #d4e5f5; 	background-size: 100% 100%;background-attachment: fixed; }
 div{ display: grid; align-items: center;justify-content: center;}
 h3{font-size: 18px;}
+
+/*#x{display: none;}*/
 
 .calculadora{
 	height: 70vh; width: 56vw;min-width: 360px; margin: auto;margin-top: 7.5vh;
