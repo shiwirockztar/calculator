@@ -53,14 +53,16 @@
   // equal.onclick = function(e){operandob = resultado.textContent;resolver();}
 
 // -------------------- suma --------------------
-  plus.onclick = function(e){resultado.textContent = resultado.textContent + "+";}
+  plus.onclick = function(e){resultado.textContent = resultado.textContent + "+";numeros.push(x.textContent);x.textContent = "";}
 // -------------------- resta --------------------
-  minus.onclick = function(e){resultado.textContent = resultado.textContent + "-";}
+  minus.onclick = function(e){resultado.textContent = resultado.textContent + "-";numeros.push(x.textContent);x.textContent = "";}
 // ------------------ limpiar ------------------
   function limpiar(){resultado.textContent = "";}
 
   equal.onclick = function(e){
       // resolver();
+      numeros.push(x.textContent);x.textContent = "";
+      filtrar();//resultado de hacer del a operaciones
       igualar();
       // limpiar();
   }
@@ -77,7 +79,8 @@
 
     let n = new Decimal(y).plus(0).toNumber ();//al final del proceso antes de borrar el resultado se muestra
     respuesta.textContent = n;
-    console.log(totalP," y ",totalN," n ",n)
+    console.log(totalP," y ",totalN," n ",n);
+    console.log(numeros);
 
     sum=0,totalN=0,totalP=0;}
 
@@ -111,6 +114,20 @@
   operacion = "";
   }
 
-
-
 // ----------------------------------------------------
+
+// ------------------------------------------ filtrar ------------------------------------------
+
+function filtrar(){
+
+  numeros =numeros.filter(check);
+
+  function check(filt) {
+    return filt != "";
+  }
+
+}
+
+
+
+// --------------------------------------- fin de filtrar ---------------------------------------

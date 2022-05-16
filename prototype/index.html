@@ -3,27 +3,24 @@
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 
-  <script src='decimal.js'></script>
 
 </head>
 <body>
 
 
 <script>
-  let text='263.301+336.398+100.000-100-90-2*3-200-0+300';
-  let txt = text.split("+"); 
-  document.write(txt);
-
-let n= new Decimal(123.78);
-let b=n.plus(0).toNumber ();
-console.log(b);
-// n = Math.abs(n); // Change to positive var decimal = n - Math.floor(n)
 
 // var decimal = n - Math.floor(n)
 
+const ages = [32, 33, 16, 40];
 
+let x =ages.filter(check);
 
-  console.log(n);
+function check(filt) {
+  return filt != 16;
+}
+
+  console.log(x);
 </script>
 
 </body>
