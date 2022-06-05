@@ -18,7 +18,7 @@
   var clear = document.getElementById('clear');
   var plus = document.getElementById('plus');//suma
   var minus = document.getElementById('minus');
-  var multiplicacion = document.getElementById('multiplicacion');
+  var multiply = document.getElementById('multiply');
   var division = document.getElementById('division');
   var equal = document.getElementById('equal');//igual
 
@@ -53,11 +53,13 @@
   // equal.onclick = function(e){operandob = resultado.textContent;resolver();}
 
 // -------------------- suma --------------------
-  plus.onclick = function(e){resultado.textContent = resultado.textContent + "+";numeros.push(x.textContent);x.textContent = "";}
+  plus.onclick = function(e){resultado.textContent = resultado.textContent + "+";numeros.push(x.textContent);x.textContent = "";operaciones.push("+");}
 // -------------------- resta --------------------
-  minus.onclick = function(e){resultado.textContent = resultado.textContent + "-";numeros.push(x.textContent);x.textContent = "";}
+  minus.onclick = function(e){resultado.textContent = resultado.textContent + "-";numeros.push(x.textContent);x.textContent = "-";operaciones.push("-");}
+  // -------------------- multiplicacion --------------------
+  multiply.onclick = function(e){resultado.textContent = resultado.textContent + "X";numeros.push(x.textContent);x.textContent = "";operaciones.push("X");}
 // ------------------ limpiar ------------------
-  function limpiar(){resultado.textContent = "";}
+  function limpiar(){resultado.textContent = ""; numeros=[];operaciones=[];}
 
   equal.onclick = function(e){
       // resolver();
@@ -72,18 +74,38 @@
   let totalP=0,sum=0,totalN=0;
 
   function igualar(){
-    let text = resultado.textContent.split("+"); 
-    text.forEach(operator);
-    let x=new Decimal(totalP);
-    let y= x.minus(totalN).toNumber();
+    // let text = resultado.textContent.split("+"); 
+    // text.forEach(operator);
+    // let z=new Decimal(totalP);
+    // let y= z.minus(totalN).toNumber();
+    // let n = new Decimal(y).plus(0).toNumber ();//al final del proceso antes de borrar el resultado se muestra
+    // respuesta.textContent = n;
+    // // console.log(totalP," y ",totalN," n ",n);
+    // let na=-2;
+    // let nb=4; console.log(na*-nb);
+    // console.log(numeros);
+    // console.log(operaciones);
+  // let n=0;  
+  operaciones.forEach(multiplicar);
 
-    let n = new Decimal(y).plus(0).toNumber ();//al final del proceso antes de borrar el resultado se muestra
-    respuesta.textContent = n;
-    console.log(totalP," y ",totalN," n ",n);
-    console.log(numeros);
 
-    sum=0,totalN=0,totalP=0;}
+   console.log("los numeros son",numeros);
 
+  numeros.forEach(sumatoria);
+  console.log("suma final dio",sum);
+  respuesta.textContent = sum;
+
+
+    // operaciones.splice(0, operaciones.length);
+    operaciones.length=0;
+    // numeros.splice(0, numeros.length);
+    numeros.length=0;
+    sum=0,totalN=0,totalP=0;
+
+
+  }
+
+// ------------------------------fin proceso (=) igual ----------------------------------
 
   function operator(item){
     if (item.search("-")<0) { 
@@ -97,7 +119,25 @@
        totalN+=(sum)-n.toNumber();
        sum=0;}
   }
+// --------------------------------------- multiplicaciones  ---------------------------------------
+let n=0;
+// operaciones.forEach(multiplicar);
 
+function multiplicar(item){
+  if (item=="X") {
+    console.log(operaciones[n],"  x",operaciones[n+1]);
+    operaciones[n]=operaciones.splice(n, 1);console.log("la posicion que vamos a borrar sera la",n);
+    numeros[n]=numeros[n]*numeros[n+1];numeros.splice(n+1, 1);
+    console.log("pos",n," multiplicamos x",n+1);
+  }
+  else{console.log("pos",n," numero",numeros[n]," item ",item);}
+  n++;
+console.log(numeros);
+console.log(operaciones);
+
+}
+
+ // --------------------------------------fin de multiplicaciones  --------------------------------------
 
   function sumatoria(item){
   sum=new Decimal(parseFloat(item)).plus(sum).toNumber ();  // numeroD+sum
@@ -111,7 +151,7 @@
   // text.replace("ㅤ","");
   operandob = 0;
   operandoa = 0;
-  operacion = "";
+  operacion = "";numeros=[];operaciones=[];
   }
 
 // ----------------------------------------------------
@@ -131,3 +171,10 @@ function filtrar(){
 
 
 // --------------------------------------- fin de filtrar ---------------------------------------
+
+
+ // sum=0;
+  //  console.log("los numeros son",numeros);
+
+  // numeros.forEach(sumatoria);
+  // console.log("suma final dio",sum);
