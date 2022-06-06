@@ -70,82 +70,40 @@
   }
 
 
-// ---------------------------------- proceso (=) igual ----------------------------------
   let totalP=0,sum=0,totalN=0;
 
+// ---------------------------------- proceso (=) igual ----------------------------------
   function igualar(){
-    // let text = resultado.textContent.split("+"); 
-    // text.forEach(operator);
-    // let z=new Decimal(totalP);
-    // let y= z.minus(totalN).toNumber();
-    // let n = new Decimal(y).plus(0).toNumber ();//al final del proceso antes de borrar el resultado se muestra
-    // respuesta.textContent = n;
-    // // console.log(totalP," y ",totalN," n ",n);
-    // let na=-2;
-    // let nb=4; console.log(na*-nb);
-    // console.log(numeros);
-    // console.log(operaciones);
-  // let n=0;  
   operaciones.forEach(multiplicar);
-
-
-   console.log("los numeros son",numeros);
-
   numeros.forEach(sumatoria);
-  console.log("suma final dio",sum);
+
   respuesta.textContent = sum;
-
-
-    // operaciones.splice(0, operaciones.length);
-    operaciones.length=0;
-    // numeros.splice(0, numeros.length);
-    numeros.length=0;
-    sum=0,totalN=0,totalP=0;
-
-
-  }
-
+  sum=0;}
 // ------------------------------fin proceso (=) igual ----------------------------------
 
-  function operator(item){
-    if (item.search("-")<0) { 
-       let n=new Decimal(parseFloat(item));//se crea objeto decimal para operarlos
-       totalP=n.plus(totalP).toNumber();} //al hacerles operacion se convierten a num
-    else  {
-       let element=item.split("-");
-       let n=new Decimal(parseFloat(element[0]));
-       totalP=n.plus(totalP).toNumber();
-       element.forEach(sumatoria);
-       totalN+=(sum)-n.toNumber();
-       sum=0;}
-  }
+
 // --------------------------------------- multiplicaciones  ---------------------------------------
-let n=0;
-// operaciones.forEach(multiplicar);
+let n;
 
-function multiplicar(item){
+function multiplicar(item,n=0){
   if (item=="X") {
-    console.log(operaciones[n],"  x",operaciones[n+1]);
-    operaciones[n]=operaciones.splice(n, 1);console.log("la posicion que vamos a borrar sera la",n);
-    numeros[n]=numeros[n]*numeros[n+1];numeros.splice(n+1, 1);
-    console.log("pos",n," multiplicamos x",n+1);
+    operaciones.splice(n, 1);  //se borra la operacion X
+    numeros[n]=numeros[n]*numeros[n+1];numeros.splice(n+1, 1);  //
   }
-  else{console.log("pos",n," numero",numeros[n]," item ",item);}
-  n++;
-console.log(numeros);
-console.log(operaciones);
-
-}
-
+  else{}
+  n++;}
  // --------------------------------------fin de multiplicaciones  --------------------------------------
 
+
+// ----------------------------------------- inicio de sumatoria      ------------------------------------
   function sumatoria(item){
   sum=new Decimal(parseFloat(item)).plus(sum).toNumber ();  // numeroD+sum
   console.log("la suma va en ",sum);
   return sum;}
-// --------------------------------- fin de proceso igual ---------------------------------
+// ----------------------------------------- fin de sumatoria      ------------------------------------
 
 
+// --------------------------------- inicio de reset ---------------------------------
   function resetear(){
   resultado.textContent = "";x.textContent="";//"ㅤ"
   // text.replace("ㅤ","");
@@ -153,8 +111,7 @@ console.log(operaciones);
   operandoa = 0;
   operacion = "";numeros=[];operaciones=[];
   }
-
-// ----------------------------------------------------
+// --------------------------------- fin de reset ---------------------------------
 
 // ------------------------------------------ filtrar ------------------------------------------
 
